@@ -1,0 +1,36 @@
+body{
+    margin:0 auto;
+    background-color:black;
+}
+
+header{
+    background-color:brown;
+    color:white;
+    width:100%;
+}
+
+.game-area{
+    background-color:brown;
+    color:white;
+}
+
+
+.characters-row{
+
+}
+
+.char-titles, .char-health{
+    text-align:center;
+}
+
+.char-titles{
+    font-size:20px;
+}
+
+.col-3{
+    background-color:black;
+}
+
+
+
+
