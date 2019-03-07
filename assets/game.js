@@ -1,38 +1,55 @@
-//health, character, and attack variables
+//health and name variables, and position array.
 
 var characters = {
 
     names : ["Mecha Slime", "Aetherial Sconce", "Bug Homonculous", "Flying Tree"],
 
-    healthArray : [100, 210, 80, 230]
+    healthArray : [100, 210, 80, 230],
+
+    images: [
+        "https://via.placeholder.com/200",
+        "https://via.placeholder.com/200",
+        "https://via.placeholder.com/200",
+        "https://via.placeholder.com/200"
+    ]
 
 }
+
+
 
 //for loop that takes all the names, health values, and images of characters and 
-//appends it within the characters div.
+//appends it within the characters-row div.
 
 for (var i = 0; i < characters.names.length; i++){
-    //applying the names
-    var charTitle = $("<span class = 'col-3'>");
-    charTitle.text(characters.names[i]);
+    //defining the main div for each character
+    var newDiv = $("<div class = 'charDiv col-3'>");
+
+    //defining the elements to be put inside newDiv
+    var newImg = $("<img src='" + characters.images[i] + "' alt='placeholder' id = 'mecha-slime' class = 'col-12 images'>")
+    var newName = $("<span class = 'col-12 char-titles'>");
+    var newHealth = $("<span class = 'col-12 char-health'>");
     
-    //applying the health
-    var charHealth = $("<span class = 'col-3'>");
-    charHealth.text("Health: " + characters.healthArray[i]);
+    newName.text(characters.names[i]);
+    newHealth.text("Health: " + characters.healthArray[i]);
+    
+    //adding all the new elements into the new div
+    newDiv.append(newName);
+    newDiv.append(newImg);
+    newDiv.append(newHealth);
 
-    //applying the images
-    var charImage = $("<img src='https://via.placeholder.com/200' alt='placeholder' class = 'col-3'>")
-
-    //appending all the info
-    $(".char-titles").append(charTitle);
-    $(".char-health").append(charHealth);
-    $(".char-images").append(charImage);
+    //adding newDiv into characters-row
+    $(".characters-row").append(newDiv);
 }
+
+function rearrange(id){
+    console.log("rearrange was called...");
+}   
+
 
 
 
 
 //onclick function
-$("#attack-btn").on("click", function(){
-
+$(".attack-btn").on("click", function(){
+    
 })
